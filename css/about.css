@@ -1,0 +1,144 @@
+.about {
+    padding: 2em 15% 2em 15%;
+}
+
+.about--h1 {
+    padding-top: 1.1em;
+    font-size: 62px;
+    font-family: "Turrent Road Bold";
+    font-weight: 900;
+    
+}
+
+.about--h2 {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding-right: 35%;
+    letter-spacing: 1px;
+    font-size: 32px;
+    line-height: 1.5em;
+    font-weight: 600;
+    color: rgba(50, 50, 50, 0.9);
+    font-family: 'Inconsolata', sans-serif;
+}
+
+.contactus--button {
+    padding: 1.5em 5em;
+    font-weight: 700;
+}
+.btnCTA2 {
+    padding: 20px 75px;
+    background-color: #1890FF;
+    border: none;
+    outline: none;
+    border-radius: 0.4em;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: #edf0f1;
+    font-size: 20px;
+}
+
+.btnCTA2:hover {
+    background-color: rgb(27, 114, 219);
+}
+
+.btnCTA2:active {
+    border: none;
+    outline: none;
+}
+
+
+@media screen and (max-width: 1850px) {
+    
+.about--h1 {
+    font-size: 60px;  
+    transition:all .8s ease;
+    
+}
+.about--h2 {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding-right: 35%;
+    letter-spacing: 1px;
+    font-size: 26px;
+    line-height: 1.2em;
+    transition:all .8s ease;
+}
+}
+
+@media screen and (max-width: 1750px) {
+    .about {
+        padding: 2em 10% 2em 15%;
+    }
+    .about--h1 {
+        font-size: 40px;  
+        transition:all .8s ease;
+    }
+    .about--h2 {
+        margin-top: 1em;
+        margin-bottom: 2em;
+        padding-right: 35%;
+        letter-spacing: 1px;
+        font-size: 22px;
+        line-height: 1em;
+        transition:all .8s ease;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .about {
+        padding: 2em 10% 2em 15%;
+    }
+    .about--h1 {
+        font-size: 30px;  
+        transition:all .8s ease;
+    }
+    .about--h2 {
+        margin-top: 1em;
+        margin-bottom: 2em;
+        padding-right: 35%;
+        letter-spacing: 1px;
+        font-size: 18px;
+        line-height: 1em;
+        transition:all .8s ease;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .about {
+        padding: 2em 5% 2em 10%;
+    }
+    .about--h1 {
+        font-size: 26px;  
+        transition:all .8s ease;
+    }
+    .about--h2 {
+        margin-top: 1em;
+        margin-bottom: 2em;
+        padding-right: 35%;
+        letter-spacing: 0px;
+        font-size: 16px;
+        line-height: 1em;
+        transition:all .8s ease;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .about--h1 {
+        font-size: 18px;  
+        transition:all .8s ease;
+    }
+    .about--h2 {
+        margin-top: 2em;
+        margin-bottom: 2em;
+        padding-right: 5%;
+        letter-spacing: 0px;
+        font-size: 14px;
+        line-height: 1em;
+        transition:all .8s ease;
+    }
+    .btnCTA2 {
+        padding: 10px 35px;
+        font-size: 16px;
+    }
+}

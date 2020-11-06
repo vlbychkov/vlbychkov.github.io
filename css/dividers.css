@@ -1,0 +1,139 @@
+.divider {
+    padding-top: 2em;
+    width: 100%;
+    text-align:center;
+    box-sizing:border-box;
+}
+
+.Text {
+	font-size: 16px;
+	font-weight: 400;
+	background-color: #fff;
+	padding-right: 10px;
+    display: inline-block;
+    width: 6%;
+    padding: 0px;
+    vertical-align: middle;
+    opacity: 0.3;
+}
+
+.div-line2 {
+	border-bottom: 1px solid #f0f0f0;
+	/* border-top: 1px solid #f0f0f0; */
+	width: 74%;
+	height: 2px;
+	display: inline-block;
+    vertical-align: middle;
+    background-color: #444857;
+    margin-bottom: 0;
+    opacity: 0.3;
+}
+
+.div-line1 {
+	border-bottom: 1px solid #f0f0f0;
+	/* border-top: 1px solid #f0f0f0; */
+	width: 19%;
+    height: 2px;
+    opacity: 0.3;
+	display: inline-block;
+    vertical-align: middle;
+    background-color: #444857;
+    margin-bottom: 0;
+}
+
+
+
+@media screen and (max-width: 1850px) {
+    .Text {
+        font-size: 16px;
+        font-weight: 400;
+        background-color: #fff;
+        padding-right: 10px;
+        width: 6%;
+        padding: 0px;
+    }
+    
+    .div-line2 {
+        width: 74%;
+        height: 2px;
+        background-color: #444857;
+    }
+    
+    .div-line1 {
+        width: 19%;
+        height: 2px;
+        margin-bottom: 0;
+    }
+    }
+    
+@media screen and (max-width: 1500px) {
+    .Text {
+        font-size: 14px;
+        width: 8%;
+        padding: 0px;
+    }
+    
+    .div-line2 {
+        width: 70%;
+        height: 2px;
+    }
+    
+    .div-line1 {
+        width: 20%;
+        height: 2px;
+    }
+    }
+    
+@media screen and (max-width: 950px) {
+    .Text {
+        font-size: 14px;
+        width: 12%;
+        padding: 0px;
+    }
+    
+    .div-line2 {
+        width: 66%;
+        height: 2px;
+    }
+    
+    .div-line1 {
+        width: 20%;
+        height: 2px;
+    }
+    }
+    
+ @media screen and (max-width: 650px) {
+    .Text {
+        font-size: 14px;
+        width: 18%;
+        padding: 0px;
+    }
+    
+    .div-line2 {
+        width: 60%;
+        height: 2px;
+    }
+    
+    .div-line1 {
+        width: 19.5%;
+        height: 2px;
+    }
+    }
+
+    @media screen and (max-width: 550px) {
+        .Text {
+            font-size: 12px;
+            width: 18%;
+            padding: 0px;
+        }
+        
+        .div-line2 {
+            width: 58%;
+            height: 2px;
+        }
+        
+        .div-line1 {
+            width: 19.5%;
+            height: 2px;
+        }
+    }

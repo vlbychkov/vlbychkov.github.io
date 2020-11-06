@@ -1,0 +1,56 @@
+.div-padding {
+    padding-top: 6%;
+}
+
+.div-client {
+    display: flex;
+    padding-right: 17%;
+    padding-left: 15%;
+    padding-bottom: 0%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.div-client img {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 7%;
+}
+
+@media screen and (max-width: 1850px) {
+    .div-client {
+        padding-right: 15%;
+        padding-left: 15%;
+        padding-bottom: 4%;
+        width: 100%;
+        justify-content: space-between;
+    }
+    }
+    
+@media screen and (max-width: 1500px) {
+
+    }
+    
+@media screen and (max-width: 1150px) {
+
+    }
+    
+ @media screen and (max-width: 870px) {
+    .div-client {
+        padding-right: 10%;
+        padding-left: 10%;
+        padding-bottom: 0%;
+        margin-top: 1em;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .div-client img {
+        width: 46px;
+        height: 46px;
+        margin-bottom: 7%;
+    }
+    }
+    
+@media screen and (max-width: 550px) {
+
+}

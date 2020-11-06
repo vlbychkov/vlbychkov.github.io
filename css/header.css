@@ -1,0 +1,94 @@
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2em 15% 2em 15%;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.logo-div {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.nav__links {
+    list-style: none;
+    display: flex;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+}
+
+
+.nav__links li a:hover {
+    color: #0088a9;
+}
+
+.btnCTA {
+    padding: 9px 25px;
+    background-color: #1890FF;
+    border: none;
+    outline: none;
+    border-radius: 0.4em;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: #edf0f1;
+    font-size: 20px;
+}
+
+.btnCTA:hover {
+    background-color: rgb(27, 114, 219);
+}
+
+.btnCTA:active {
+    border: none;
+    outline: none;
+}
+
+
+
+
+
+@media screen and (max-width: 820px) {
+    .nav__links li {    
+        padding: 0px 10px;
+    }
+    .btnCTA{
+        font-size: 16px;
+        padding: 5px 7px;
+        font-weight: 800;
+    }
+    header {
+        padding: 2em 10%;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .nav__links li {    
+        padding: 0px 5px;
+    }
+    .btnCTA{
+        margin-right: -100em;
+        padding: 0;
+        font-size: 0;
+    }
+    header {
+        padding: 2em 10%;
+        font-size: 14px;
+    }
+    .logo-div img {
+        width: 24px;
+        height: 24px;
+    }
+    .logo-div p {
+        font-size: 12px;
+    }
+}
