@@ -1,1 +1,1 @@
-[!Img alt](https://yadi.sk/d/Ex2NjBmYTRI8Cw)
+[!Img alt](https://sun9-31.userapi.com/W7SqZq2CgyRlPpgQchedbuExDgkZYmPxIoHtyQ/7VGgwo8fF6A.jpg)
