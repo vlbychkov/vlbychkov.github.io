@@ -1,14 +1,14 @@
 @font-face {
     font-family: "Turrent Road";
     src: local("Turrent Road"),
-        url('/fonts/TurretRoad-Light.ttf') format('woff');
+        url('/devWoper/fonts/TurretRoad-Light.ttf') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: "Turrent Road Bold";
     src: local("Turrent Road"),
-        url('/fonts/TurretRoad-ExtraBold.ttf') format('woff');
+        url('/devWoper/fonts/TurretRoad-ExtraBold.ttf') format('woff');
     font-weight: normal;
     font-style: normal;
 }

@@ -41,18 +41,6 @@ function overlayOpen(check) {
         formOverlay.style.width =  100 + "%";
         formOverlay.style.opacity = 1;
         formOverlay.style.position = "fixed";
-    } else if (check == "menu") {
-        let formOverlay = document.getElementById("div-form-overlay");
-        let overlay = document.getElementById("overlayContactUs");
-
-
-        overlay.style.width = 0 + "px";
-        overlay.style.opacity = 0;
-
-        
-        formOverlay.style.width =  100 + "%";
-        formOverlay.style.opacity = 1;
-        formOverlay.style.position = "fixed";
     }
     
 }
@@ -67,3 +55,18 @@ function overlayClose() {
 
 }
 
+
+const anchors = document.getElementById('yak')
+
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault()
+    
+    const blockID = anchor.getAttribute('href').substr(1)
+    
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  })
+}
