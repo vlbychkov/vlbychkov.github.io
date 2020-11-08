@@ -2,8 +2,45 @@
 window.onload = () => {
     let btnTouch = document.getElementById("cta");
     let btnTouch2 = document.getElementById("cta2");
-
+    let sendBtnForm = document.getElementById("btn-overlay");
     
+    
+
+    sendBtnForm.addEventListener("touchstart", function(e) {
+        let form=document.getElementById('form');
+        
+        // form.innerHTML='';
+        setTimeout(function(e) {
+            form.innerHTML = "";
+            form.className = "form-send"
+        }, 2000)
+    })
+    sendBtnForm.addEventListener("click", function(e) {
+        let form=document.getElementById('form');
+        
+        form.innerHTML = "";
+        form.className = "form-send";
+        let p = document.createElement("p");
+        p.textContent = "Sent. Thenks.";
+        form.appendChild(p);
+        setTimeout(function(e) {
+            overlayClose();
+            form.className = "form-overlay";
+            form.innerHTML = `<input placeholder="Enter your name" 
+            type="text" class="input-name-overlay" 
+            id="input-name-overlay" >
+            <input type="email" class="input-email-overlay"
+            id="input-email-overlay"
+            placeholder="Enter your email">
+            <textarea placeholder="Enter your questions"
+            class="txtarea-overlay" id="txtarea-overlay"></textarea>
+            <button type="button" id="btn-overlay" class="btn-overlay" value="Send">Send</button>
+            `;
+        }, 4000);
+        
+
+    })
+
     btnTouch.addEventListener("touchstart", function(e) {
         overlayOpen('cu');
     }) 
@@ -28,11 +65,33 @@ window.onload = () => {
 
 
 
+function test() {
+    let form=document.getElementById('form');
+        
+    form.innerHTML = "";
+    form.className = "form-send";
+    let p = document.createElement("p");
+    p.textContent = "Sent. Thenks.";
+    form.appendChild(p);
+    setTimeout(function(e) {
+        form.className = "form-overlay";
+        form.innerHTML = `<input placeholder="Enter your name" 
+        type="text" class="input-name-overlay" 
+        id="input-name-overlay" >
+        <input type="email" class="input-email-overlay"
+        id="input-email-overlay"
+        placeholder="Enter your email">
+        <textarea placeholder="Enter your questions"
+        class="txtarea-overlay" id="txtarea-overlay"></textarea>
+        <button type="button" id="btn-overlay" class="btn-overlay" value="Send">Send</button>
+        `;
+    }, 4000);
+    overlayClose();
+}
 
 function overlayOpen(check) {
     
     if (check == "cu") {
-        console.log("Open Ov")
         let overlay = document.getElementById("overlayContactUs");
         let formOverlay = document.getElementById("div-form-overlay");
         overlay.style.width =  100 + "%";
@@ -55,18 +114,3 @@ function overlayClose() {
 
 }
 
-
-const anchors = document.getElementById('yak')
-
-for (let anchor of anchors) {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault()
-    
-    const blockID = anchor.getAttribute('href').substr(1)
-    
-    document.getElementById(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-  })
-}
