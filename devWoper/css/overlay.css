@@ -55,6 +55,23 @@
     margin-left: 1em;
     color: #1890FF;
 }
+.input-name-error {
+    font-size: 24px;
+    outline:none;
+    outline-offset: 0;
+    border-bottom: 1px solid #FB212F;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 95%;
+    margin-left: 1em;
+    color: #FB212F;
+}
+.input-name-error::placeholder {
+    color: #FB212F
+}
 .input-name-overlay::placeholder {
     color: #6387a8; 
 }
@@ -110,6 +127,27 @@
     color: #1890FF;
     margin-bottom: 2em;
     
+}
+.txtarea-error {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 100px;
+    font-size: 24px;
+    outline:none;
+    outline-offset: 0;
+    border-bottom: 1px solid #FB212F;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    width: 95%;
+    margin-left: 1em;
+    color: #FB212F;
+    margin-bottom: 2em;
+    
+}
+.txtarea-error::placeholder{
+    color: #FB212F;
+    font-size: 24px
 }
 .txtarea-overlay::placeholder {
     color: #6387a8;
