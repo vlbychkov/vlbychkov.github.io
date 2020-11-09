@@ -1,44 +1,20 @@
 
 window.onload = () => {
+    // loadForm()
     let btnTouch = document.getElementById("cta");
     let btnTouch2 = document.getElementById("cta2");
     let sendBtnForm = document.getElementById("btn-overlay");
-    
-    
 
-    sendBtnForm.addEventListener("touchstart", function(e) {
-        let form=document.getElementById('form');
-        
-        // form.innerHTML='';
-        setTimeout(function(e) {
-            form.innerHTML = "";
-            form.className = "form-send"
-        }, 2000)
-    })
     sendBtnForm.addEventListener("click", function(e) {
-        let form=document.getElementById('form');
-        
-        form.innerHTML = "";
-        form.className = "form-send";
-        let p = document.createElement("p");
-        p.textContent = "Sent. Thenks.";
-        form.appendChild(p);
-        setTimeout(function(e) {
-            overlayClose();
-            form.className = "form-overlay";
-            form.innerHTML = `<input placeholder="Enter your name" 
-            type="text" class="input-name-overlay" 
-            id="input-name-overlay" >
-            <input type="email" class="input-email-overlay"
-            id="input-email-overlay"
-            placeholder="Enter your email">
-            <textarea placeholder="Enter your questions"
-            class="txtarea-overlay" id="txtarea-overlay"></textarea>
-            <button type="button" id="btn-overlay" class="btn-overlay" value="Send">Send</button>
-            `;
-        }, 4000);
-        
+        let inpEmail = document.getElementById("input-email-overlay");
 
+        if(validateEmail(inpEmail.value) === true){
+            clickSend();
+            inpEmail.value = ""; 
+        } else {
+            inpEmail.className = "input-email-error";
+        }
+        
     })
 
     btnTouch.addEventListener("touchstart", function(e) {
@@ -63,31 +39,33 @@ window.onload = () => {
     
 }
 
-
-
-function test() {
-    let form=document.getElementById('form');
-        
-    form.innerHTML = "";
-    form.className = "form-send";
-    let p = document.createElement("p");
-    p.textContent = "Sent. Thenks.";
-    form.appendChild(p);
-    setTimeout(function(e) {
-        form.className = "form-overlay";
-        form.innerHTML = `<input placeholder="Enter your name" 
-        type="text" class="input-name-overlay" 
-        id="input-name-overlay" >
-        <input type="email" class="input-email-overlay"
-        id="input-email-overlay"
-        placeholder="Enter your email">
-        <textarea placeholder="Enter your questions"
-        class="txtarea-overlay" id="txtarea-overlay"></textarea>
-        <button type="button" id="btn-overlay" class="btn-overlay" value="Send">Send</button>
-        `;
-    }, 4000);
-    overlayClose();
+function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
 }
+
+function clickSend() {
+    let formf=document.getElementById('form-first');
+    let sendBtnForm = document.getElementById("btn-overlay");
+    sendBtnForm.style.marginBottom = 5 + "em";
+    fs = formf.style;
+    fs.width = fs.height = fs.top = fs.left = 0;
+    fs.position = "absolute";
+    let form=document.getElementById('form');
+    form.style.padding = 15 + "%";
+    form.style.fontSize = 64 + "px";
+    
+    setTimeout(function(e) {
+        form.style.padding = "";
+        form.style.fontSize = "";
+        sendBtnForm.style.marginBottom = 2 + "em";
+        fs.width = fs.height = fs.top = fs.left = "";
+        fs.position = "";
+        
+    }, 3000)
+    
+}
+
 
 function overlayOpen(check) {
     
