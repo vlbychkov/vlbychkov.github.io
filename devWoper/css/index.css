@@ -1,3 +1,13 @@
+@import url("about.css");
+@import url("header.css");
+@import url("dividers.css");
+@import url("footer.css");
+@import url("clients.css");
+@import url("team.css");
+@import url("overlay.css");
+@import url("services.css");
+
+
 * {
     box-sizing: border-box;
     margin: 0;

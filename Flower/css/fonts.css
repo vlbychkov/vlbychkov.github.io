@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "Biryani"; /* Гарнитура шрифта */
+    src: url('/Flower/fonts/Biryani-Regular.ttf') format('woff'); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: "Biryani B"; /* Гарнитура шрифта */
+    src: url('/Flower/fonts/Biryani-Black.ttf') format('woff'); /* Путь к файлу со шрифтом */
+}

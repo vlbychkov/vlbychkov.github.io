@@ -1,0 +1,53 @@
+header {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    /* margin-right: 25px; */
+    height: 958px;
+    width: 97.3%;
+    background-image: url('/Flower/image/flower.jpg');
+    background-size: 156% 127%;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-position: 100% 0%;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.nav-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-div--logo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: auto;
+}
+
+.div-img--logo{
+    width: 48px;
+    height: 48px;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+.div-h1--name {
+    font-size: 36px;
+    font-family: "Biryani B";
+
+}
+.nav__links {
+    list-style: none;
+    display: flex;
+}
+
+.nav__links li {
+    display: inline-block;
+}
+
