@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Flower/css/index.css">
     <title>Flower</title>
-    <script src="/Flower/js/index,js"></script>
+    <script type="module" src="/Flower/js/index.js"></script>
 </head>
 <body>
     <header class="header">
@@ -16,8 +16,8 @@
                 <h1 class="div-h1--name">fw</h1>
             </div>
             <ul class="nav__links">
-                <li><a href="#" class="nav-a">articles</a></li>
-                <li><a href="#" class="nav-a">about</a></li>
+                <li><a href="#" class="nav-a hover-border">articles</a></li>
+                <li><a href="#" class="nav-a hover-border">about</a></li>
                 <li><a href="#" class="nav-a"><button class="a-button--subscribe">subscribe</button></a></li>
             </ul>
             
@@ -29,5 +29,72 @@
         </div>
         
     </header>
+    <section>
+        <div class="container" id="overlay">
+            <div class="section-div--articles">
+            
+                <div class="div-div--text">
+                    <p class="div-h1--last-articles">
+                        lastest articles
+                    </p>
+                    <hr class="hr-la">
+                </div>
+                <div class="articles">
+                    <div class="div-article--first" id="di">
+                        <img src="/Flower/image/flower1.png" alt="Flower 1" class="div-img--img-article">
+
+                        <div class="text-card">
+                            <hr class="hr-card">
+                            <p class="div-p--p-card">
+                                Morbi a cursus orci. Suspendisse consectetur dapibus.
+                            </p>
+                            <div class="div-btn" id="div-btn">
+                                <button class="btn-div" id="btn-div">more info</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="div-article--first" id="div-article--first">
+                        <img src="/Flower/image/flower2.png" alt="Flower 1" class="div-img--img-article">
+
+                        <div class="text-card">
+                            <hr class="hr-card">
+                            <p class="div-p--p-card">
+                                Morbi a cursus orci. Suspendisse consectetur dapibus.
+                            </p>
+                            <div class="div-btn" id="div-btn">
+                                <button class="btn-div" id="btn-div">more info</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="div-article--first" id="div-article--first">
+                        <img src="/Flower/image/flower3.png" alt="Flower 1" class="div-img--img-article">
+
+                        <div class="text-card">
+                            <hr class="hr-card">
+                            <p class="div-p--p-card">
+                                Morbi a cursus orci. Suspendisse consectetur dapibus.
+                            </p>
+                            <div class="div-btn" id="div-btn">
+                                <button class="btn-div" id="btn-div">more info</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="overlay overlayLeft" id="overlayGround">
+                    <div class="test">
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
 </body>
 </html>
