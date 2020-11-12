@@ -79,10 +79,24 @@ function checkValidateForm(name, email, txtarea, formf, sendBtnForm, form) {
     }
 }
 
+function delimiter(countMore, words) {
+    let h1 = document.getElementById("print-h1");
+    setInterval(() => {
+        if (countMore === 0){
+          h1.textContent = words + "|";
+          countMore = 1
+        } else if (countMore = 1) {
+          h1.textContent = words;
+          countMore = 0;
+        }
+        
+      }, 300)
+}
 
 export {
     overlayOpen,
     overlayClose,
     clickSend,
-    checkValidateForm
+    checkValidateForm,
+    delimiter
 };

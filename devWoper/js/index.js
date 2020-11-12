@@ -41,3 +41,42 @@ window.onload = () => {
     })
     
 }
+
+const config = {
+    word: "We're an independent development agency.",
+    count : 0,
+    reverseCount : 1,
+    words : "",
+    course : "up",
+    countMore: 0,
+  }
+  
+  let interval = setInterval(function(e) {
+    if (config.word[config.count] === undefined) {
+        let h1 = document.getElementById("print-h1");
+      
+      if (typeof h1.textContent !== "undefined") {
+        h1.textContent = config.words + "|";
+      } else {
+        h1.innerHTML = config.words;
+      }
+      config.word = "";
+      config.count = 0;
+      clearInterval(interval);
+      func.delimiter(config.countMore,config.words);
+
+    } else { 
+      config.words += config.word[config.count];
+
+      let h1 = document.getElementById("print-h1");
+      
+      if (typeof h1.textContent !== "undefined") {
+        h1.textContent = config.words + "|";
+      } else {
+        h1.innerHTML = config.words;
+      }
+      config.count+=1;
+    }
+      
+  }, 75)
+
