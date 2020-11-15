@@ -32,14 +32,7 @@
 }
 
 
-.div-text-btn-close {
-    position: absolute;
-    z-index: 0;
-    width: 0;
-    height: 0;
-    left: 0;
-    top: 0;
-}
+
 
 .div-more-info{
     background-color: rgb(255, 255, 255);
@@ -52,14 +45,35 @@
     
 }
 
-.div-img-overlay {
+/* .div-img-overlay {
     height: 35%;
     background-image: url('/Flower/image/flower1.png');
     background-size: cover;
-}
+} */
 
 .disable-scroll {
-    position: relative;
+    /* position: relative;
     overflow: hidden;
-    height: 100vh;
+    height: 100vh; */
 }
+
+.div-text-btn-close{
+    font-family: "Biryani";
+    position: absolute;
+    opacity: 0;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
+/* 
+.card-p1 {
+    font-size: 42px;
+    text-align: center;
+}
+
+.card-p2 {
+    text-align: center;
+    font-size: 28px;
+} */

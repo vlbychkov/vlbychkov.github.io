@@ -2,25 +2,15 @@ function openOverlay(ground, form) {
     window.scrollTo(0, 1100)
     document.body.classList.add('disable-scroll');
 
-    let pFirst = document.createElement("p");
-    pFirst.className="div-p--p-card";
+    let test = document.getElementById("div-text-btn-close")
 
-    let pSecond = document.createElement("text-overlay-info");
-    let formSecond = document.getElementById("div-text-btn-close");
+    test.style.opacity = 1;
+    test.style.position = "";
 
-    let btnClose = document.createElement("button");
-    btnClose.className="div-overlay-close";
-    btnClose.innerText="CLOSE";
-    btnClose.id="div-overlay-close";
-
-
-    formSecond.appendChild(pFirst);
-    formSecond.appendChild(pSecond);
-    formSecond.appendChild(btnClose);
+    let btnClose = document.getElementById("btn-close");
 
     btnClose.addEventListener("click", () => {
-        closeOverlay(ground, form, pFirst,pSecond , btnClose, formSecond);
-
+        closeOverlay(ground, form);
     })
 
     ground.style.width = form.style.width = 100 + "%";
@@ -29,16 +19,9 @@ function openOverlay(ground, form) {
  
     form.style.position = "fixed";  
 
-    // setTimeout(() => {
-    //     closeOverlay(ground, form)
-    // }, 5000)
 }
 
-function closeOverlay(ground, form, pFirst, pSecond, btnClose, formSecond) {
-    document.body.classList.remove('disable-scroll');
-    formSecond.remove(pFirst);
-    formSecond.remove(pSecond);
-    formSecond.remove(btnClose);
+function closeOverlay(ground, form) {
     ground.style.width = 0 + "%";
     ground.style.opacity = 0
     ground.style.zIndex = 0
