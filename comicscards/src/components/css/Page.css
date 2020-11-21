@@ -1,0 +1,17 @@
+.grid {
+  padding-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 100px;
+}
+
+.grid-card {
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.card:hover {
+  transition: 0.2s ease;
+  border: 4px solid black;
+}
