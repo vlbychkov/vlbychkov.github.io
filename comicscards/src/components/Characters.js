@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "./css/Page.css"
-import {Link} from 'react-router-dom';
+import { BrowserRouter as Router, NavLink } from "react-router-dom";
 
 
 class Characters extends Component {
@@ -8,6 +8,7 @@ class Characters extends Component {
     componentDidMount() {
         // * When a component loading --> fetch data to redux
         this.props.getCard("characters", 100)
+        
         
     }
     
@@ -18,23 +19,25 @@ class Characters extends Component {
     }
 
     partingCards = (arrCards) => {
-        // console.log(arrCards.arr)
         // * Decomposed on the shelves
+
         arrCards = arrCards.arr
         let allCards = arrCards.map((index, key) => 
-        <Link key={key} to={"/characters/"+index.name}>
-            <div className="grid-card card">
-                <img src={index.image.original_url} alt={index.name} width="auto" height="256px"/>
-                <h1>{index.name}</h1>
-                <p>{index.deck}</p>
-                <p>{index.publisher.name}</p>
-            </div>
-        </Link>)
-        console.log(allCards)
+        <Router key={key}>
+            <NavLink to={"/characters/"+index.id}>
+                <div className="grid-card card">
+                    <img src={index.image.original_url} alt={index.name} width="auto" height="256px"/>
+                    <h1>{index.name}</h1>
+                    <p>{index.publisher.name}</p>
+
+                </div>
+            </NavLink>
+        </Router>)
         return allCards
     }
 
     render() {
+        
         console.log(this.props)
         const { arr, isFetch} = this.props.charactersCard
         if (isFetch) {
@@ -48,10 +51,13 @@ class Characters extends Component {
             if (arr.length > 0) {
                 
                 return (
-                    <div className="grid grid-table">
-                        {<this.partingCards arr={arr}/>}
-
-                    </div>
+                    
+                        <div className="grid grid-table">
+                            
+                            <this.partingCards arr={arr}/>
+                            
+                        </div>
+                    
                 )
             } if (arr.length === 0) {
                 return(
