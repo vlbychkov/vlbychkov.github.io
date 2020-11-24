@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { getData } from '../action/cards';
 import Card from './card';
 import Characters from './Characters';
@@ -11,48 +11,24 @@ import Volumes from './Volumes';
 
 class App extends Component {
 
-
-
   render () {
-    
     const { getData, charactersCard } = this.props
-
-    if (charactersCard.arr.length > 0) {
-      return(
-        <div>
-          <Router>
-
-            
-          <Nav />
-          <Route path='/'/>
-          <Route exact path={"/characters/:id"} >
-            <Card card={charactersCard}/>
-          </Route>
-          <Route exact path='/characters' render={() => <Characters charactersCard={charactersCard} getCard={getData}/>} />
-          
-          <Route path='/volumes' render={() => <Volumes/>} />
-
-          
-
-          </Router>
-        </div>
-       
-      )
-    } else {
       return(
         <Router>
+            <Nav />
+            <Route path='/'/>
+            <Route exact path={"/characters/:id"} >
+              <Card card={charactersCard}/>
+            </Route>
+            <Route exact path='/characters'>
+              <Characters charactersCard={charactersCard} getCard={getData}/>
+            </Route>
+            <Route path='/volumes'>
+              <Volumes/>
+            </Route>
 
-            
-          {/* <Route path={"/characters/:id"} render={() => <Card/>}/> */}
-          <Nav />
-          <Route path='/'/>
-          <Route path='/characters' render={() => <Characters charactersCard={charactersCard} getCard={getData}/>} />
-          <Route path='/volumes' render={() => <Volumes/>} />
-        </Router>
-      )
-    }
-   
-    
+          </Router>
+      ) 
   }
   
 }

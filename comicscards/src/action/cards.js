@@ -3,7 +3,6 @@ export const SUCCESS_DATA = 'SUCCESS_DATA'
 
 export function getData(choice, count) {
     return dispatch => {
-        // console.log(choice, count, "this getData")
         dispatch({
           type: REQUEST_DATA,
         })
