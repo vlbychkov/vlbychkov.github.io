@@ -11,43 +11,24 @@ import Volumes from './Volumes';
 
 class App extends Component {
 
-
-
   render () {
-    
     const { getData, charactersCard } = this.props
-
-    if (charactersCard.arr.length > 0) {
-      return(
-        <div>
-          <Router>
-
-            
-          <Nav />
-          <Route path='/'/>
-          <Route exact path='/characters' render={() => <Characters charactersCard={charactersCard} getCard={getData}/>} />
-          <Route path='/volumes' render={() => <Volumes/>} />
-          <Route path={"/characters/:id"} render={() => <Card card={charactersCard}/>}/>
-
-          </Router>
-        </div>
-       
-      )
-    } else {
       return(
         <Router>
+            <Nav />
+            <Route path='/'/>
+            <Route exact path={"/characters/:id"} >
+              <Card card={charactersCard}/>
+            </Route>
+            <Route exact path='/characters'>
+              <Characters charactersCard={charactersCard} getCard={getData}/>
+            </Route>
+            <Route path='/volumes'>
+              <Volumes/>
+            </Route>
 
-            
-          {/* <Route path={"/characters/:id"} render={() => <Card/>}/> */}
-          <Nav />
-          <Route path='/'/>
-          <Route path='/characters' render={() => <Characters charactersCard={charactersCard} getCard={getData}/>} />
-          <Route path='/volumes' render={() => <Volumes/>} />
-        </Router>
-      )
-    }
-   
-    
+          </Router>
+      ) 
   }
   
 }
