@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { getData } from '../action/cards';
 import Card from './card';
 import Characters from './Characters';
@@ -25,9 +25,14 @@ class App extends Component {
             
           <Nav />
           <Route path='/'/>
+          <Route exact path={"/characters/:id"} >
+            <Card card={charactersCard}/>
+          </Route>
           <Route exact path='/characters' render={() => <Characters charactersCard={charactersCard} getCard={getData}/>} />
+          
           <Route path='/volumes' render={() => <Volumes/>} />
-          <Route path={"/characters/:id"} render={() => <Card card={charactersCard}/>}/>
+
+          
 
           </Router>
         </div>

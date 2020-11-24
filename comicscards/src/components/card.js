@@ -9,7 +9,7 @@ export default class Card extends Component {
     
 
     render() {
-        console.log(this.props.card.arr[2])
+        console.log(123124124124124)
         const { name} = this.props.card.arr[2]
         return(
             <div>
