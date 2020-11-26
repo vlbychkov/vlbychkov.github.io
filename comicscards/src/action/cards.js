@@ -1,5 +1,5 @@
-export const REQUEST_DATA = 'REQUEST_DATA'
-export const SUCCESS_DATA = 'SUCCESS_DATA'
+import { REQUEST_DATA, SUCCESS_DATA } from '../const';
+
 
 export function getData(choice, count) {
     return dispatch => {
@@ -15,5 +15,13 @@ export function getData(choice, count) {
                 payload: response.data.results
             })
         })
+        .catch(function (error) {
+            dispatch({
+                type: SUCCESS_DATA,
+                payload: {
+                    error: error
+                }
+            })
+          })
     }
 }

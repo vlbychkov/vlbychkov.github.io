@@ -1,23 +1,22 @@
-import { REQUEST_DATA, SUCCESS_DATA } from "../action/cards"
+import { REQUEST_DATA, SUCCESS_DATA } from "../const"
+
 
 const initialState = {
     arr: [],
-    isFetch: false,
-    choice: ""
+    isFetchCards: false,
 }
 
 export function pagesReducers(state=initialState, action) {
     switch (action.type) {
         case REQUEST_DATA:
             return {
-                ...state, isFetch:true, choice: "load"
+                ...state, isFetchCards:true
             }
         case SUCCESS_DATA:
             return {
                 ...state,
                 arr: action.payload,
-                isFetch: false,
-                choice: "",
+                isFetchCards: false,
             }
         default:
             return state
