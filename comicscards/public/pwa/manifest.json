@@ -1,0 +1,15 @@
+{
+    "name": "LocalHost",
+    "short_name": "LH",
+    "display": "standalone",
+    "background_color": "#F4F4F4",
+    "theme_color": "#F4F4F4", 
+    "orientation": "portrait-primary",
+    "start_url": "/localhost:3000",
+    "icons": [
+        {
+          "src": "white-balance.png",
+          "type": "image/png", 
+          "sizes": "150x150"
+        }]
+  }
