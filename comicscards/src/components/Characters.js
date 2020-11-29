@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import './css/Page.css'
+import './styles/Characters.scss'
 import { Link, useParams } from 'react-router-dom'
 
 export const Characters = (state) => {
@@ -59,9 +59,14 @@ export const Characters = (state) => {
         )
     } else if (!isFetchCards) {
         if (!!Object.keys(arr).length) {
+            console.log(
+                param.pageId,
+                arr.number_of_total_results,
+                arr.number_of_page_results
+            )
             return (
-                <div>
-                    <div>
+                <div className="div--characters">
+                    <div className="div div__div">
                         <Link
                             to={
                                 '/characters/page=' +
@@ -69,6 +74,7 @@ export const Characters = (state) => {
                             }
                         >
                             <button
+                                className="btn div__btn"
                                 disabled={param.pageId < 2 ? 'disabled' : ''}
                             >
                                 {' '}
@@ -82,14 +88,14 @@ export const Characters = (state) => {
                             }
                         >
                             <button
+                                className="btn div__btn"
                                 disabled={
                                     param.pageId <
                                     Math.ceil(
-                                        arr.number_of_total_results /
-                                            arr.number_of_page_results
+                                        arr.number_of_total_results / arr.limit
                                     )
-                                        ? 'disabled'
-                                        : ''
+                                        ? ''
+                                        : 'disabled'
                                 }
                             >
                                 {' '}
