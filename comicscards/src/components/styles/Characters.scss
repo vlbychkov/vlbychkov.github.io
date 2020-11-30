@@ -1,0 +1,32 @@
+.div--characters { .div__div { display: flex;
+        justify-content: space-around; }
+    .btn { background-color: none;
+        outline: none;
+        border: 2px solid rgb(30, 30, 30);
+        border-radius: 0.25em;
+        margin: 0 1em;
+        font-size: 1.3em;
+        transition: .5s ease;
+        padding: 0.05em 1em;
+
+        &:hover { background-color: rgb(30, 30, 30);
+            color: whitesmoke; }
+        &:active { background-color: rgb(30, 30, 30);
+            outline: none; } } }
+    
+    .grid {
+        padding-top: 2em;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-row-gap: 100px;
+    }
+    .grid-card{
+        justify-content: center;
+        text-align: center;
+        padding-bottom: 5px;
+        border: 4px solid white;
+    }
+    .card:hover {
+        transition: 0.2s ease;
+        border: 4px solid black;
+      }
