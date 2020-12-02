@@ -1,0 +1,103 @@
+.status {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 235px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    &__block {
+        background-color: #EAEAEA;
+        width: 500px;
+    }
+    &__status_text{
+        padding-left: 12px;
+    }
+    &__block_up {
+        background-color: #EAEAEA;
+        width: 11px;
+        height: 11px;
+        position: absolute;
+        margin-left: 10px;
+        margin-top: -5px;
+        transform: rotate(45deg);   
+    }
+    &__block--inputStatus {
+        background-color: #EAEAEA;
+        width: 500px;
+        height: 80px;
+        z-index: 1;
+        // display: flex;
+    }
+    &__prompt--inputStatus {
+        position: absolute;
+        z-index: 0;
+    }
+    &__inp_status_user {
+        background-color: #EAEAEA;
+        border-style: none;
+        outline: none;
+        border-bottom: 1px solid #959595;
+        font-size: 14px;
+        line-height: 22px;
+        margin-left: 1%;
+        width: 97%;
+        margin-top: 2.5%;
+    }
+    &__inp_status_user:focus {
+        &::placeholder {
+            color: #aaaaaa
+        }
+    }
+    &__block_up--inputStatus {
+        background-color: #EAEAEA;
+        width: 11px;
+        height: 11px;
+        position: absolute;
+        margin-left: 10px;
+        margin-top: -5px;
+        transform: rotate(45deg);  
+    }
+    
+    &__btn_status {
+        width: 100px;
+        height: 30px;
+
+        &--save {
+            background-color: #71C838;
+            border: none;
+            color: white;
+            text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 1px 0px #539D22;
+            outline: none;
+            cursor: pointer;
+        }
+        &--save:disabled{
+            background-color: #5f5f5f;
+            cursor: default;
+        }
+        &--save:active {
+            background-color: #64ad33;
+            border: 2px solid #81e241;
+        }
+
+        &--cancel {
+            background-color: #ffffff;
+            border: none;
+            color: rgb(0, 0, 0);
+            text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 1px 0px #cfcfcf;
+            outline: none;
+            cursor: pointer;
+        }
+        &--cancel:active {
+            background-color: #d8d8d8;
+            border: 2px solid #ffffff;
+        }
+    }
+    &__panel_btn {
+        margin-right: 1%;
+        margin-left: 1%;
+        margin-top: 0.4em;
+        display: flex;
+        justify-content: space-between;
+    }
+}
