@@ -1,0 +1,141 @@
+
+body {
+    height: 95vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    --size: 7%;
+    --br: 3.5em;
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+
+}
+
+.App div {
+    margin: 0 10px;
+    cursor: pointer;
+    height: 80vh;
+    border-radius: var(--br);
+    
+}
+
+.second_first, .third_first, .four_first, .five_first {
+    transition: .8s;
+    background-position: center;
+    width: var(--size);
+    border-radius: var(--br);
+}
+.image_first { 
+    width: 70%;
+    background-image: url('/img/first_image.jpg');
+    background-position: center;
+    transition: .7s;
+}
+
+.second_first { 
+    background-image: url('/img/sec_image.jpg');
+}
+
+.third_first { 
+    background-image: url('/img/third_image.jpg');
+}
+
+.four_first { 
+    background-image: url('/img/four_image.jpg');
+}
+
+.five_first { 
+    background-image: url('/img/five_image.jpg');
+}
+
+
+img {
+    object-fit: cover;
+    border-radius: 3.5em;
+    width: 100%;
+    height: 100%;
+}
+
+.p_image1, .p_image2, .p_image3, .p_image4, .p_image5  {
+    position: absolute;
+    padding-top: 37.5%;
+    padding-left: 2.5%;
+    margin:0;
+    font-family: 'Mulish';
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+    opacity: 0;
+    transition: 0.9s;
+}
+
+.p_image1{
+    opacity: 1;
+}
+
+
+@media screen and (max-height: 900px) {
+    .p_image1, .p_image2, .p_image3, .p_image4, .p_image5  {
+        padding-top: 35.5%;
+    }
+}
+@media screen and (max-width: 1500px) {
+    
+.second_first, .third_first, .four_first, .five_first {
+    width: 11%;
+}
+    .image_first { 
+        width: 54%;
+    }
+}
+@media screen and (max-width: 1170px) {
+    
+    .second_first, .third_first, .four_first, .five_first {
+        width: 50%;
+    }
+    .image_first { 
+        width: 42%;
+    }
+}
+@media screen and (max-height: 780px) {
+    .p_image1, .p_image2, .p_image3, .p_image4, .p_image5  {
+        padding-top: 29.5%;
+    }
+}
+@media screen and (max-height: 650px) {
+    .p_image1, .p_image2, .p_image3, .p_image4, .p_image5  {
+        padding-top: 24.5%;
+    }
+}
+@media screen and (max-height: 570px) {
+    .p_image1, .p_image2, .p_image3, .p_image4, .p_image5  {
+        padding-top: 20.5%;
+    }
+}
+@media screen and (max-height: 500px) {
+    .p_image1, .p_image2, .p_image3, .p_image4, .p_image5  {
+        padding-top: 17.5%;
+    }
+}
+@media screen and (max-height: 400px) {
+    .p_image1, .p_image2, .p_image3, .p_image4, .p_image5  {
+        padding-top: 12.5%;
+    }
+}
+@media screen and (max-height: 300px) {
+    .p_image1, .p_image2, .p_image3, .p_image4, .p_image5  {
+        padding-top: 8.5%;
+    }
+}
+
+
+@font-face {
+    font-family: 'Mulish'; /*a name to be used later*/
+    src: url('./font/Mulish-Bold.ttf'); /*URL to font*/
+}
