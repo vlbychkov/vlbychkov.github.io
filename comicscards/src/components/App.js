@@ -4,13 +4,20 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { getData } from '../action/cards'
 import { getCharacter } from '../action/character'
 import { Card } from './Card'
-import { Characters } from './Characters'
+import { PageCharacters } from './PageCharacters'
 
 import './css/App.css'
 import Nav from './Nav'
 import Volumes from './Volumes'
 
 class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+            countCards: 24,
+        }
+    }
+
     render() {
         const {
             getData,
@@ -21,7 +28,7 @@ class App extends Component {
         return (
             <Router>
                 <Nav />
-                <Route path="/" />
+                <Route exact path="/" />
                 <Route exact path={'/characters/person/:id'}>
                     <Card
                         charCardPerson={charCardPerson}
@@ -29,12 +36,13 @@ class App extends Component {
                     />
                 </Route>
                 <Route exact path="/characters/page=:pageId">
-                    <Characters
+                    <PageCharacters
                         charactersCard={charactersCard}
                         getCard={getData}
+                        countOffset={this.state.countCards}
                     />
                 </Route>
-                <Route path="/volumes">
+                <Route exact path="/volumes">
                     <Volumes />
                 </Route>
             </Router>

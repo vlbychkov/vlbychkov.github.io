@@ -15,7 +15,7 @@ export function getData(choice, count, offset) {
                         '/?api_key=ba11ebe1e047e96f96ba3660f8a73c38421e2c1e&limit=' +
                         count +
                         '&offset=' +
-                        offset * 24 +
+                        offset * count +
                         '&format=json'
                 )
                 .then((response) => {
