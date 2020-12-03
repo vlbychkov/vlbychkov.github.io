@@ -33,25 +33,25 @@ body {
 }
 .image_first { 
     width: 70%;
-    background-image: url('/img/first_image.jpg');
+    background-image: url('https://github.com/Huzzky/huzzky.github.io/blob/main/50days50projects/1d/img/first_image.jpg?raw=true');
     background-position: center;
     transition: .7s;
 }
 
 .second_first { 
-    background-image: url('/img/sec_image.jpg');
+    background-image: url('https://github.com/Huzzky/huzzky.github.io/blob/main/50days50projects/1d/img/sec_image.jpg?raw=true');
 }
 
 .third_first { 
-    background-image: url('/img/third_image.jpg');
+    background-image: url('https://github.com/Huzzky/huzzky.github.io/blob/main/50days50projects/1d/img/third_image.jpg?raw=true');
 }
 
 .four_first { 
-    background-image: url('/img/four_image.jpg');
+    background-image: url('https://github.com/Huzzky/huzzky.github.io/blob/main/50days50projects/1d/img/four_image.jpg?raw=true');
 }
 
 .five_first { 
-    background-image: url('/img/five_image.jpg');
+    background-image: url('https://github.com/Huzzky/huzzky.github.io/blob/main/50days50projects/1d/img/five_image.jpg?raw=true');
 }
 
 
