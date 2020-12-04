@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import '../styles/User.scss'
 import { UserStatus } from './UserStatus'
 
-export const User = () => {
+export const User = (user) => {
     let ref = React.createRef()
     const [changeStatusChoice, setChangeStatusChoice] = useState(false)
     const [disable, setDisable] = useState('')
-    const [Status, setStatus] = useState('Прежде, чем действовать, надо понять')
-    const User = 'Человек №3596941'
+    const [Status, setStatus] = useState(user.user.status)
+    const User = user.user.name
 
     const choiceChangeStatus = () => {
         if (!changeStatusChoice) {
@@ -62,29 +62,29 @@ export const User = () => {
     }
 
     return (
-        <div>
+        <React.Fragment>
             <div className="User">
-                <div className="cardUser">
+                <div className="name-user">
                     <div>
-                        <p className="cardUser__user">
-                            <span className="cardUser__span">
+                        <p className="name-user__user">
+                            <span className="name-user__span">
                                 Здравствуйте,
                             </span>{' '}
-                            {User}
+                            Человек №{User}
                         </p>
                     </div>
-                    <div className="cardUser__btnChangeStatus">
+                    <div className="name-user__btnChangeStatus">
                         <p
-                            className="cardUser__changeStatus"
+                            className="name-user__changeStatus"
                             onClick={() => setChangeStatusChoice(true)}
                         >
                             Сменить статус
                         </p>
-                        <div className="cardUser__line"></div>
+                        <div className="name-user__line"></div>
                     </div>
                 </div>
             </div>
             {choiceChangeStatus()}
-        </div>
+        </React.Fragment>
     )
 }
