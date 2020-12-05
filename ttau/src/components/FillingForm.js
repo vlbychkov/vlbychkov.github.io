@@ -43,9 +43,6 @@ export const FillingForm = (params) => {
         }
     }
 
-
-    const 
-
     const [city, setCity] = useState(mostCityPopul())
     const [unCorrectPassword, setUnCorrectPassword] = useState(true)
     const [unCorrectEmail, setUnCorrectEmail] = useState(true)
