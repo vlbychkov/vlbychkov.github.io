@@ -13,7 +13,7 @@ export const User = (user) => {
         if (!changeStatusChoice) {
             return <UserStatus status={Status} />
         } else {
-            return inpChangeStatusUser()
+            return inpChangeStatusUser(Status)
         }
     }
 
@@ -25,7 +25,7 @@ export const User = (user) => {
         }
     }
 
-    const inpChangeStatusUser = () => {
+    const inpChangeStatusUser = (status) => {
         return (
             <div className="status">
                 <div className="status__block--inputStatus">
@@ -34,10 +34,11 @@ export const User = (user) => {
                         className="status__inp_status_user"
                         type="text"
                         maxLength="46"
+                        name="status"
                         placeholder="Введите свой новый статус"
                         ref={ref}
                         onChange={() => disabledDefinition(ref.current.value)}
-                    ></input>
+                    />
                     <div className="status__panel_btn">
                         <button
                             className="status__btn_status status__btn_status--save"

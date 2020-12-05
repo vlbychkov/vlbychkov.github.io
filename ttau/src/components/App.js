@@ -10,7 +10,7 @@ function App() {
     return (
         <div className="App">
             <UserPage user={user} />
-            <FillingForm city={arrCity} />
+            <FillingForm city={arrCity} user={user} />
         </div>
     )
 }
