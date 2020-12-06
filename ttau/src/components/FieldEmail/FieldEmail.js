@@ -3,13 +3,26 @@ import '../styles/Email.scss'
 
 export const FieldEmail = (params) => {
     let refPEmail = React.createRef()
+    let refInputEmail = React.createRef()
     const readingEmail = (e) => {
         if (e.currentTarget.value === '') {
             refPEmail.current.textContent = 'Укажите E-mail'
+            refPEmail.current.className = 'block-input__p-email--red'
+            refInputEmail.current.className = 'block-input__input-email--red'
+
+            params.correctEmail(false)
         } else if (validateEmail(e.currentTarget.value) === false) {
             refPEmail.current.textContent = 'Неверный E-mail'
+            refPEmail.current.className = 'block-input__p-email--red'
+            refInputEmail.current.className = 'block-input__input-email--red'
+
+            params.correctEmail(false)
         } else {
             refPEmail.current.textContent = ''
+            refPEmail.current.className = 'block-input__p-email'
+            refInputEmail.current.className = 'block-input__input-email'
+
+            params.correctEmail(true, e.currentTarget.value)
         }
     }
 
@@ -26,6 +39,7 @@ export const FieldEmail = (params) => {
                     type="email"
                     onChange={readingEmail}
                     onBlur={readingEmail}
+                    ref={refInputEmail}
                 />
                 <p ref={refPEmail} className="block-input__p-email"></p>
             </div>

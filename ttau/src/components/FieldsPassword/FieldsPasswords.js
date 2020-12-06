@@ -6,29 +6,42 @@ export const FieldsPasswords = (params) => {
     let refp1 = React.createRef()
     let refp2 = React.createRef()
     let refInput = React.createRef()
-
-    const changeOnRed = (refp1, e) => {
-        refp1.current.className = 'field-input__p--first--red'
-        e.currentTarget.className = 'field-input__first-p-input--red'
-    }
-    const changeOnRed2 = (refp2, e) => {
-        refp2.current.className = 'field-input__p--second--red'
-        e.currentTarget.className = 'field-input__second-p-input--red'
-    }
+    let refInputSecondPassword = React.createRef()
 
     const checkPasswordInput = (e) => {
         if (e.currentTarget.id === '1') {
             if (e.currentTarget.value === '') {
                 refp1.current.textContent = 'Укажите пароль'
-                changeOnRed(refp1, e)
+                refp1.current.className = 'field-input__p--first--red'
+                e.currentTarget.className = 'field-input__first-p-input--red'
+
                 params.correctPassword(false)
             } else if (e.currentTarget.value.length < 5) {
                 refp1.current.textContent = 'Используйте не менее 5 символов'
-                changeOnRed(refp1, e)
+                refp1.current.className = 'field-input__p--first--red'
+                e.currentTarget.className = 'field-input__first-p-input--red'
+
                 params.correctPassword(false)
+            } else if (
+                refInputSecondPassword.current.value !==
+                    e.currentTarget.value &&
+                refInputSecondPassword.current.value.length > 1
+            ) {
+                setPassword(e.currentTarget.value)
+
+                refp2.current.textContent = 'Пароли не совпадают'
+                refp2.current.className = 'field-input__p--second--red'
+                refInputSecondPassword.current.className =
+                    'field-input__second-p-input--red'
             } else {
                 refp1.current.textContent = ''
-                changeOnRed(refp1, e)
+                refp1.current.className = 'field-input__p--first--no-red'
+                e.currentTarget.className = 'field-input__first-p-input'
+                refp2.current.className = 'field-input__p--second--no-red'
+                refInputSecondPassword.current.className =
+                    'field-input__second-p-input'
+                refp2.current.textContent = ''
+
                 setPassword(e.currentTarget.value)
                 params.correctPassword(false)
             }
@@ -36,22 +49,29 @@ export const FieldsPasswords = (params) => {
             if (e.currentTarget.value === '' && refInput.current.value === '') {
                 refp2.current.textContent = 'Укажите пароль'
                 refp2.current.className = 'field-input__p--second--red'
-                changeOnRed(refp1, e)
+                refp1.current.className = 'field-input__p--first--red'
+                e.currentTarget.className = 'field-input__first-p-input--red'
                 refp1.current.textContent = 'Укажите пароль'
                 refInput.current.className = 'field-input__first-p-input--red'
+
                 params.correctPassword(false)
             } else if (e.currentTarget.value === '') {
                 refp2.current.textContent = 'Укажите пароль'
-                changeOnRed2(refp2, e)
+                refp2.current.className = 'field-input__p--second--red'
+                e.currentTarget.className = 'field-input__second-p-input--red'
+
                 params.correctPassword(false)
             } else if (e.currentTarget.value !== password) {
                 refp2.current.textContent = 'Пароли не совпадают'
-                changeOnRed2(refp2, e)
+                refp2.current.className = 'field-input__p--second--red'
+                e.currentTarget.className = 'field-input__second-p-input--red'
+
                 params.correctPassword(false)
             } else if (e.currentTarget.value === password) {
                 refp2.current.className = 'field-input__p--second--no-red'
                 e.currentTarget.className = 'field-input__second-p-input'
                 refp2.current.textContent = ''
+
                 params.correctPassword(true, password)
             }
         }
@@ -91,6 +111,7 @@ export const FieldsPasswords = (params) => {
                         onBlur={checkPasswordInput}
                         onChange={checkPasswordInput}
                         id="2"
+                        ref={refInputSecondPassword}
                     />
                     <p
                         className="field-input__p--second--no-red"

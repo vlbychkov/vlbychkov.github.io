@@ -14,7 +14,9 @@
     &__block-p {
         & p {
             margin: 0;
+            margin-top: 10px;
             color:#999999;
+            font-size: 12px;
         }
     }
 }
@@ -23,11 +25,28 @@
     &__input-email {
         margin: 0;
         margin-right: 1.7em;
-        
-    }
-    &__input-email {
         border: 1px solid #999999;
         width: 335px;
         height: 31px;
+        outline: none;
+        
+    }
+    &__input-email--red {
+        margin: 0;
+        margin-right: 1.7em;
+        border: 1px solid #FF0000;
+        width: 335px;
+        height: 31px;
+        outline: none;
+    }
+    &__p-email {
+        margin: 0;
+        margin-bottom: 16px; 
+        
+    }
+    &__p-email--red {
+        font-size: 12px;
+        margin: 0;
+        color: #FF0000;
     }
 }
