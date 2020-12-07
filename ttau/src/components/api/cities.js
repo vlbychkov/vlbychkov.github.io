@@ -1,4 +1,4 @@
-export function Api() {
+export default function getCity() {
     return [
         {
             city: 'Артёмовск',

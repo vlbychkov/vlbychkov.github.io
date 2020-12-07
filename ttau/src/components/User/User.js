@@ -2,18 +2,18 @@ import React, { useState } from 'react'
 import '../styles/User.scss'
 import { UserStatus } from './UserStatus'
 
-export const User = () => {
+export const User = (user) => {
     let ref = React.createRef()
     const [changeStatusChoice, setChangeStatusChoice] = useState(false)
     const [disable, setDisable] = useState('')
-    const [Status, setStatus] = useState('Прежде, чем действовать, надо понять')
-    const User = 'Человек №3596941'
+    const [Status, setStatus] = useState(user.user.status)
+    const User = user.user.name
 
     const choiceChangeStatus = () => {
         if (!changeStatusChoice) {
             return <UserStatus status={Status} />
         } else {
-            return inpChangeStatusUser()
+            return inpChangeStatusUser(Status)
         }
     }
 
@@ -25,7 +25,7 @@ export const User = () => {
         }
     }
 
-    const inpChangeStatusUser = () => {
+    const inpChangeStatusUser = (status) => {
         return (
             <div className="status">
                 <div className="status__block--inputStatus">
@@ -34,10 +34,11 @@ export const User = () => {
                         className="status__inp_status_user"
                         type="text"
                         maxLength="46"
+                        name="status"
                         placeholder="Введите свой новый статус"
                         ref={ref}
                         onChange={() => disabledDefinition(ref.current.value)}
-                    ></input>
+                    />
                     <div className="status__panel_btn">
                         <button
                             className="status__btn_status status__btn_status--save"
@@ -62,29 +63,29 @@ export const User = () => {
     }
 
     return (
-        <div>
+        <React.Fragment>
             <div className="User">
-                <div className="cardUser">
+                <div className="name-user">
                     <div>
-                        <p className="cardUser__user">
-                            <span className="cardUser__span">
+                        <p className="name-user__user">
+                            <span className="name-user__span">
                                 Здравствуйте,
                             </span>{' '}
-                            {User}
+                            Человек №{User}
                         </p>
                     </div>
-                    <div className="cardUser__btnChangeStatus">
+                    <div className="name-user__btnChangeStatus">
                         <p
-                            className="cardUser__changeStatus"
+                            className="name-user__changeStatus"
                             onClick={() => setChangeStatusChoice(true)}
                         >
                             Сменить статус
                         </p>
-                        <div className="cardUser__line"></div>
+                        <div className="name-user__line"></div>
                     </div>
                 </div>
             </div>
             {choiceChangeStatus()}
-        </div>
+        </React.Fragment>
     )
 }
