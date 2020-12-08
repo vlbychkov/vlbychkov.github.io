@@ -2,38 +2,9 @@ import React, { useState } from 'react'
 import City from './Cities/City'
 import { FieldsPasswords } from './FieldsPassword/FieldsPasswords'
 import { FieldEmail } from './FieldEmail/FieldEmail'
+import { BtnSendForm } from './btnSendForm/btnSendForm'
 
 export const FillingForm = (params) => {
-    const dateObject = new Date(params.user.user.last_save)
-    const months = [
-        'января',
-        'февраля',
-        'марта',
-        'апреля',
-        'мая',
-        'июня',
-        'июля',
-        'августа',
-        'сентября',
-        'октабря',
-        'ноября',
-        'декабря',
-    ]
-    const humanDateFormat = dateObject.toLocaleString() //2019-12-9 10:30:15
-    console.log(humanDateFormat)
-    let formatted_date =
-        dateObject.toLocaleString('ru', { day: 'numeric' }) +
-        ' ' +
-        months[dateObject.toLocaleString('ru', { month: 'numeric' }) - 1] +
-        ' ' +
-        dateObject.toLocaleString('ru', { year: 'numeric' }) +
-        ' в ' +
-        (dateObject.toLocaleString('ru', { hour: 'numeric' }) - 4) +
-        ':' +
-        dateObject.toLocaleString('ru', { minute: 'numeric' }) +
-        ':' +
-        dateObject.toLocaleString('ru', { second: 'numeric' })
-
     const selectedCity = (value) => {
         setCity(value)
     }
@@ -52,34 +23,6 @@ export const FillingForm = (params) => {
         })
 
         return count.city
-    }
-    const sendForm = (event) => {
-        event.preventDefault()
-        if (city === '') {
-            setCity(mostCityPopul())
-        }
-        console.log({
-            user: {
-                user_number: params.user.user.name,
-                user_city: city,
-                user_password: password,
-                user_email: email,
-            },
-        })
-        let current_datetime = new Date()
-        formatted_date =
-            current_datetime.getDate() +
-            ' ' +
-            months[current_datetime.getMonth()] +
-            ' ' +
-            current_datetime.getFullYear() +
-            ' в ' +
-            current_datetime.getHours() +
-            ':' +
-            current_datetime.getMinutes() +
-            ':' +
-            current_datetime.getSeconds()
-        return false
     }
 
     const correctPassword = (booleanAnswer, password) => {
@@ -103,6 +46,7 @@ export const FillingForm = (params) => {
     }
 
     const [city, setCity] = useState(mostCityPopul())
+    console.log(city)
     const [unCorrectPassword, setUnCorrectPassword] = useState(true)
     const [unCorrectEmail, setUnCorrectEmail] = useState(true)
     const [password, setPassword] = useState('')
@@ -123,17 +67,19 @@ export const FillingForm = (params) => {
                 <FieldsPasswords correctPassword={correctPassword} />
                 <hr />
                 <FieldEmail correctEmail={correctEmail} />
-                <div>
-                    <input
-                        type="submit"
-                        onClick={sendForm}
-                        disabled={validateBtn(
+                <React.Fragment>
+                    <BtnSendForm
+                        user={params.user.user.name}
+                        city={city}
+                        password={password}
+                        email={email}
+                        disabledBtn={validateBtn(
                             unCorrectPassword,
                             unCorrectEmail
                         )}
+                        lastSave={params.user.user.last_save}
                     />
-                    <p>Последние изменения {formatted_date}</p>
-                </div>
+                </React.Fragment>
             </form>
         </React.Fragment>
     )
