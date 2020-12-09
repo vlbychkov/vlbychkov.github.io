@@ -9,8 +9,10 @@ function App() {
     let arrCity = getCity()
     return (
         <div className="App">
-            <UserPage user={user} />
-            <FillingForm city={arrCity} user={user} />
+            <div>
+                <UserPage user={user} />
+                <FillingForm city={arrCity} user={user} />
+            </div>
         </div>
     )
 }

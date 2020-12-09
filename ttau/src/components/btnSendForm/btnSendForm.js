@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
+import '../styles/BlockSendForm.scss'
 
 export const BtnSendForm = (params) => {
-    const parseDateSave = () => {
-        const dateObject = new Date(params.lastSave)
+    const formattingDate = (date) => {
         const months = [
             'января',
             'февраля',
@@ -17,49 +17,69 @@ export const BtnSendForm = (params) => {
             'ноября',
             'декабря',
         ]
-        const humanDateFormat = dateObject.toLocaleString() //2019-12-9 10:30:15
-        console.log(humanDateFormat)
-        let formatted_date =
-            dateObject.toLocaleString('ru', { day: 'numeric' }) +
+        return (
+            date.toLocaleString('ru', { day: 'numeric' }) +
             ' ' +
-            months[dateObject.toLocaleString('ru', { month: 'numeric' }) - 1] +
+            months[date.toLocaleString('ru', { month: 'numeric' }) - 1] +
             ' ' +
-            dateObject.toLocaleString('ru', { year: 'numeric' }) +
+            date.toLocaleString('ru', { year: 'numeric' }) +
             ' в ' +
-            (dateObject.toLocaleString('ru', { hour: 'numeric' }) - 4) +
+            (date.toLocaleString('ru', { hour: 'numeric' }) - 4) +
             ':' +
-            dateObject.toLocaleString('ru', { minute: 'numeric' }) +
+            date.toLocaleString('ru', { minute: 'numeric' }) +
             ':' +
-            dateObject.toLocaleString('ru', { second: 'numeric' })
+            (parseInt(
+                date.toLocaleString('ru', { second: 'numeric' }).length < 2
+            )
+                ? '0' + date.toLocaleString('ru', { second: 'numeric' })
+                : date.toLocaleString('ru', { second: 'numeric' }))
+        )
+    }
 
-        return formatted_date
+    const parseDateSave = (check) => {
+        if (check === 'default') {
+            const dateObject = new Date(params.lastSave)
+
+            return formattingDate(dateObject)
+        } else if (check === 'update') {
+            const dateObject = new Date(Date.now())
+
+            return formattingDate(dateObject)
+        }
     }
 
     const sendForm = (event) => {
         event.preventDefault()
-        setLastSaveDate(Date.now())
+        setLastSaveDate(parseDateSave('update'))
         console.log({
+            type: 'CHANGE_INFO_USER',
             user: {
                 user_id: params.user,
                 user_city: params.city,
                 user_password: params.password,
                 user_email: params.email,
                 last_save: Date.now(),
+                checked_info_email: params.checkedInfoEmail,
             },
         })
 
         return false
     }
 
-    const [lastSaveDate, setLastSaveDate] = useState(parseDateSave)
+    const [lastSaveDate, setLastSaveDate] = useState(parseDateSave('default'))
     return (
-        <div>
+        <div className="block-send-form">
+            <div></div>
             <input
+                className="block-send-form__input-btn-send"
                 type="submit"
                 disabled={params.disabledBtn}
                 onClick={sendForm}
+                value="Изменить"
             />
-            <p>Последние изменения {lastSaveDate}</p>
+            <p className="block-send-form__p-date-last-save">
+                Последние изменения {lastSaveDate}
+            </p>
         </div>
     )
 }

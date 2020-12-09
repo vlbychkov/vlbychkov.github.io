@@ -7,6 +7,7 @@ export const User = (user) => {
     const [changeStatusChoice, setChangeStatusChoice] = useState(false)
     const [disable, setDisable] = useState('')
     const [Status, setStatus] = useState(user.user.status)
+    const [temporaryStatus, setTemporaryStatus] = useState(user.user.status)
     const User = user.user.name
 
     const choiceChangeStatus = () => {
@@ -37,21 +38,35 @@ export const User = (user) => {
                         name="status"
                         placeholder="Введите свой новый статус"
                         ref={ref}
-                        onChange={() => disabledDefinition(ref.current.value)}
+                        onChange={() => {
+                            setTemporaryStatus(ref.current.value)
+                            disabledDefinition(ref.current.value)
+                        }}
+                        value={temporaryStatus}
                     />
                     <div className="status__panel_btn">
                         <button
                             className="status__btn_status status__btn_status--save"
                             onClick={() => {
-                                setStatus(ref.current.value)
                                 setChangeStatusChoice(false)
+                                setStatus(ref.current.value)
+                                console.log({
+                                    type: 'CHANGE_STATUS',
+                                    user: {
+                                        user_number: User,
+                                        new_status: ref.current.value,
+                                    },
+                                })
                             }}
                             disabled={disable}
                         >
                             Изменить
                         </button>
                         <button
-                            onClick={() => setChangeStatusChoice(false)}
+                            onClick={() => {
+                                setTemporaryStatus(Status)
+                                setChangeStatusChoice(false)
+                            }}
                             className="status__btn_status status__btn_status--cancel"
                         >
                             Отменить

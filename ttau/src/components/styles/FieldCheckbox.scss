@@ -1,0 +1,23 @@
+.block-checkbox {
+    display: grid;
+    grid-template-columns: 1fr 3fr 4fr;
+
+    &__block-input {
+        display: flex;
+        align-items: center;
+    }
+    &__title-h2 {
+        font-weight: 500;
+        font-size: 21px;
+    }
+}
+
+.block-input {
+    &__desc-check {
+        margin: 0;
+        font-size: 16px;
+    }
+    &__checkbox-info {
+        color: #7E7E7E
+    }
+}

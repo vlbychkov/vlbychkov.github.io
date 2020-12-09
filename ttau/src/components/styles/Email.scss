@@ -1,12 +1,12 @@
 .card-email {
     margin: 0;
     padding-top: 32px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 5.45fr;
     &__h2 {
         margin:0;
         font-weight: 500;
         font-size: 21px;
-        margin-right: 2.3em;
     }
     &__block-input {
         margin: 0;

@@ -1,0 +1,23 @@
+.block-send-form {
+    display: grid;
+    grid-template-columns: 15.15em 120px 50em;
+    &__p-date-last-save {
+        margin: 0;
+        margin-left: 12px;
+        align-self: center;
+    }
+    &__input-btn-send:disabled {
+        height: 3em;
+        background-color: #5f5f5f;
+        cursor: default;
+        color: #FFFFFF;
+        text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+    }
+    &__input-btn-send {
+        height: 3em;
+        background: #71C838;
+        box-shadow: 0px 1px 0px #539D22;
+        color: #FFFFFF;
+        text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+    }
+}

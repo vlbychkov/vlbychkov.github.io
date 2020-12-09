@@ -101,3 +101,31 @@
         justify-content: space-between;
     }
 }
+
+@media screen and (max-width: 1800px) {
+    .status {
+        margin-left: 150px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .status {
+        margin-right: 70px;
+        margin-left: 0px;
+        &__inp_status_user {
+            width: 94%;
+        }
+        &__block_up--inputStatus {
+            margin-left: 205px;
+        }
+        &__block_up {
+            margin-left: 205px;
+        }
+    }
+  }  
+  @media screen and (max-width: 400px) {
+    .status {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}

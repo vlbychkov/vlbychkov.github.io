@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import City from './Cities/City'
+import './styles/FieldCheckbox.scss'
+import './styles/Form.scss'
 import { FieldsPasswords } from './FieldsPassword/FieldsPasswords'
 import { FieldEmail } from './FieldEmail/FieldEmail'
 import { BtnSendForm } from './btnSendForm/btnSendForm'
@@ -46,11 +48,11 @@ export const FillingForm = (params) => {
     }
 
     const [city, setCity] = useState(mostCityPopul())
-    console.log(city)
     const [unCorrectPassword, setUnCorrectPassword] = useState(true)
     const [unCorrectEmail, setUnCorrectEmail] = useState(true)
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
+    const [checkedBox, setCheckedBox] = useState(false)
 
     const validateBtn = (checkPassword, checkEmail) => {
         if (!checkPassword && !checkEmail) {
@@ -61,18 +63,34 @@ export const FillingForm = (params) => {
     }
     return (
         <React.Fragment>
-            <form>
+            <form className="block-form-grid">
                 <City choiceCity={selectedCity} cities={params.city} />
                 <hr />
                 <FieldsPasswords correctPassword={correctPassword} />
                 <hr />
                 <FieldEmail correctEmail={correctEmail} />
+                <div className="block-checkbox">
+                    <h2 className="block-checkbox__title-h2">Я согласен</h2>
+                    <div className="block-checkbox__block-input block-input">
+                        <input
+                            className="block-input__checkbox-info"
+                            type="checkbox"
+                            onClick={(event) =>
+                                setCheckedBox(event.currentTarget.checked)
+                            }
+                        />
+                        <p className="block-input__desc-check">
+                            принимать актуальную информацию на емейл
+                        </p>
+                    </div>
+                </div>
                 <React.Fragment>
                     <BtnSendForm
                         user={params.user.user.name}
                         city={city}
                         password={password}
                         email={email}
+                        checkedInfoEmail={checkedBox}
                         disabledBtn={validateBtn(
                             unCorrectPassword,
                             unCorrectEmail

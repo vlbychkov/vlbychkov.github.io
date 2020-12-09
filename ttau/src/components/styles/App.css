@@ -1,5 +1,18 @@
 .App {
-  margin-left: 90px;
-  margin-right: 90px;
-  margin-top: 90px;
+  margin: 90px;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 1800px) {
+  .App {
+    margin: 50px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .App {
+    margin: 20px;
+    width: 100%;
+  }
 }
