@@ -1,0 +1,7 @@
+.cardPerson {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  text-align: center;
+  padding-top: 5em;
+}

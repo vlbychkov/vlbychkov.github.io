@@ -1,0 +1,30 @@
+.name-user {
+    display: flex;
+    align-items: flex-end;
+    font-family: Arial, Helvetica, sans-serif;
+
+    &__user {
+        font-size: 30px;
+        font-weight: bold;
+        margin: 0;
+        padding-right: 125px;
+    }
+    &__span{
+        color: #666666;
+    }
+    &__changeStatus {
+        font-size: 12px;
+        font-weight: normal;
+        cursor: pointer;
+        margin-bottom: 2px;
+        color: #0C77BB;
+        
+    }
+    &__line{
+        border-top: 1px dashed #0C77BB;
+        width: 86px;
+    }
+    &__btnChangeStatus {
+        margin-bottom: 5px;
+    }
+}
