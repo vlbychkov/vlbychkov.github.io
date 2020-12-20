@@ -19,7 +19,7 @@ h1 {
 span {
     opacity: 0;
     transition: all .5s ease;
-    transform: translateY(500px)
+    transform: translateY(500px);
     display: inline-block;
 }
 

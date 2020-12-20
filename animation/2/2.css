@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "JetBrains Mono";
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #111;
+}
+
+.calendar {
+    position: relative;
+    width: 200px;
+    background: #fff;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    /* -webkit-box-reflect: ; */
+}
+
+.calendar #monthName { 
+    position: relative;
+    padding: 5px 10px;
+    background: #ff6331;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.calendar #dayName {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 300;
+
+}
